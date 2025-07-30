@@ -1,2 +1,2 @@
-# natethegreatnate.github.io
+# natethegreatnate.net
 source for github pages site
