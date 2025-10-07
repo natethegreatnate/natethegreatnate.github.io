@@ -25,7 +25,7 @@ sub generate{
             my $after = $4;
 
             print $whitespace, $before;
-            open(my $template_file, "<", $include_name);
+            open(my $template_file, "<", $include_name) or die "Unable to open template file ", $include_name;
             print scalar <$template_file>;
             while(<$template_file>){
                 chomp if eof;
@@ -42,7 +42,6 @@ sub generate{
     close($src_file);
     close($dst_file);
 };
-generate "404.html";
 my $what=opendir(my $sourcedir_handle, $sourcedir);
 print $sourcedir, "\n";
 while(readdir($sourcedir_handle)){
